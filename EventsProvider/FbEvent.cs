@@ -1,16 +1,18 @@
 ﻿using System;
+using MongoDB.Bson;
 
 namespace EventsProvider
 {
     public class FbEvent
     {
+        public ObjectId Id { get; set; }
+
         public FbCategory Category { get; set; }
-    //   public  Type { get; set; }
+
         public string  EventId { get; set; }
-        public string FbName { get; set; }
+        public string Name { get; set; }
 
         public DateTime? StartDate { get; set; }
-        
 
         public string Description { get; set; }
 

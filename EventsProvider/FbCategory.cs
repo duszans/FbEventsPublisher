@@ -2,6 +2,6 @@
 {
     public enum FbCategory
     {
-        IT
+        It = 1
     }
 }
