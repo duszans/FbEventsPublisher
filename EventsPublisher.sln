@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventsProvider", "EventsPro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventsProviderConsole", "EventsProviderConsole\EventsProviderConsole.csproj", "{7DC845DD-5DAA-47D4-BF69-031616ED441B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{96A39F2E-3D32-4696-BF2A-6035AA54778C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{AFBC25DE-7A47-463D-BA51-3B998217CC55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{7DC845DD-5DAA-47D4-BF69-031616ED441B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DC845DD-5DAA-47D4-BF69-031616ED441B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DC845DD-5DAA-47D4-BF69-031616ED441B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{96A39F2E-3D32-4696-BF2A-6035AA54778C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{96A39F2E-3D32-4696-BF2A-6035AA54778C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{96A39F2E-3D32-4696-BF2A-6035AA54778C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{96A39F2E-3D32-4696-BF2A-6035AA54778C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFBC25DE-7A47-463D-BA51-3B998217CC55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFBC25DE-7A47-463D-BA51-3B998217CC55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFBC25DE-7A47-463D-BA51-3B998217CC55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFBC25DE-7A47-463D-BA51-3B998217CC55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
