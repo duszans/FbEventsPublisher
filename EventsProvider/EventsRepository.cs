@@ -19,7 +19,7 @@ namespace EventsProvider
 
         public List<FbEvent> GetByCategory(FbCategory category)
         {
-            var documents = fbEvents.Find(e => e.Category == category).ToListAsync().Result;
+            var documents = this.fbEvents.Find(e => e.Category == category).ToListAsync().Result;
             return documents;
         }
     }
