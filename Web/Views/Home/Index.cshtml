@@ -1,4 +1,4 @@
-﻿@model dynamic
+﻿@model List<FbEvent>
 @using EventsProvider;
 
 @{
@@ -15,5 +15,29 @@
 </div>
 
 <div id="content" style="float: right; width: auto; border: solid 1px; margin: 0 auto 0 auto;">
-    right
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        <div style="margin-bottom: 10px;">
+            <div>
+                @Html.LabelFor(m => m[i].Name)
+                @Html.DisplayFor(m => m[i].Name)
+            </div>
+            <div>
+                @Html.LabelFor(m => m[i].Description)
+                @Html.DisplayFor(m => m[i].Description)
+            </div>
+            <div>
+                @Html.LabelFor(m => m[i].Location)
+                @Html.DisplayFor(m => m[i].Location)
+            </div>
+            <div>
+                @Html.LabelFor(m => m[i].Owner)
+                @Html.DisplayFor(m => m[i].Owner)
+            </div>
+            <div>
+                @Html.LabelFor(m => m[i].StartDate)
+                @Html.DisplayFor(m => m[i].StartDate)
+            </div>
+        </div>
+    }
 </div>

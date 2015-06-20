@@ -13,9 +13,12 @@ namespace Web.Controllers
         public ActionResult Index(FbCategory? id)
         {
             FbCategory category = id ?? FbCategory.It;
-            List<FbEvent> events = new EventsRepository().GetByCategory(category);
+            List<FbEvent> events = new List<FbEvent>
+                                   {
+                                       new FbEvent { Category = FbCategory.It, Description = "Description1", Name = "Name1" },
+                                       new FbEvent { Category = FbCategory.It, Description = "Description2", Name = "Name2" }
+                                   };
             return this.View(events);
         }
-
     }
 }
