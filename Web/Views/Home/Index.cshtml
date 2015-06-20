@@ -1,9 +1,19 @@
 ﻿@model dynamic
+@using EventsProvider;
 
 @{
   ViewBag.Title = "Title some";
   Layout = "../Shared/_Layout.cshtml";
 }
 
-<h2>Title </h2>
-content
+<div id="menu" style="float: left; width: 200px; border: solid 1px;">
+    <nav>
+        <ul>
+            @Html.ActionLink("IT", "Index", new { Id = (int)FbCategory.It })
+        </ul>
+    </nav>
+</div>
+
+<div id="content" style="float: right; width: auto; border: solid 1px; margin: 0 auto 0 auto;">
+    right
+</div>

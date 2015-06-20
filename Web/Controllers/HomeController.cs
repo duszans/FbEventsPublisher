@@ -6,14 +6,15 @@ using System.Web.Mvc;
 
 namespace Web.Controllers
 {
+    using EventsProvider;
+
     public class HomeController : Controller
     {
-        //
-        // GET: /Home/
-
-        public ActionResult Index()
+        public ActionResult Index(FbCategory? id)
         {
-            return View();
+            FbCategory category = id ?? FbCategory.It;
+            List<FbEvent> events = new EventsRepository().GetByCategory(category);
+            return this.View(events);
         }
 
     }

@@ -22,13 +22,5 @@ namespace EventsProvider
             var documents = fbEvents.Find(e => e.Category == category).ToListAsync().Result;
             return documents;
         }
-
-
-        public void InsertFbEvent(FbEvent fb)
-        {
-            
-        }
-
-
     }
 }
