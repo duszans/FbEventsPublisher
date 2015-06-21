@@ -25,8 +25,8 @@ namespace EventsProvider
 
         [BsonElement("event_description")]
         public string Description { get; set; }
-
-        public string  PicSmall { get; set; }
+        [BsonElement("picture_url")]
+        public string  PicSmallUrl { get; set; }
 
 
         [BsonElement("location_place")]
