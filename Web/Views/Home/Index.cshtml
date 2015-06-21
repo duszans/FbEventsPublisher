@@ -14,73 +14,75 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        @Html.ActionLink("IT", "Index", new { Id = (int)FbCategory.IT })
+                    </li>
+                    <li>
+                        @Html.ActionLink("Impreza", "Index", new { Id = (int)FbCategory.Party })
+                    </li>
+                    <li>
+                        @Html.ActionLink("Sport", "Index", new { Id = (int)FbCategory.Sport })
+                    </li>
+                    <li>
+                        @Html.ActionLink("Kulinaria", "Index", new { Id = (int)FbCategory.Culinary })
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#"></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="active">
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="#about">About</a>
-                </li>
-                <li>
-                    @Html.ActionLink("IT", "Index", new { Id = (int)FbCategory.IT })
-                </li>
-                <li>
-                    @Html.ActionLink("Impreza", "Index", new { Id = (int)FbCategory.Party })
-                </li>
-                <li>
-                    @Html.ActionLink("Sport", "Index", new { Id = (int)FbCategory.Sport })
-                </li>
-                <li>
-                    @Html.ActionLink("Kulinaria", "Index", new { Id = (int)FbCategory.Culinary })
-                </li>
-            </ul>
-        </div>
+    <div class="row" style="margin-top: 70px">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            string eventUrl = string.Format("http://www.facebook.com/events/{0}", Model[i].EventId);
+            <div class="panel panel-primary col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                <div class="panel-heading">
+                    <span>@Html.DisplayFor(m => m[i].Name)</span>
+                </div>
+                <div class="panel-body">
+                    <div>
+                        <span>@Html.DisplayFor(m => m[i].Description)</span>
+                    </div>
+                    <div>
+                        <span>@Html.LabelFor(m => m[i].Location)</span>
+                        <span>@Html.DisplayFor(m => m[i].Location)</span>
+                    </div>
+                    <div>
+                        <span>@Html.LabelFor(m => m[i].Owner)</span>
+                        <span>@Html.DisplayFor(m => m[i].Owner)</span>
+                    </div>
+                    <div>
+                        <span>@Html.LabelFor(m => m[i].StartDate)</span>
+                        <span>@Html.DisplayFor(m => m[i].StartDate)</span>
+                    </div>
+                    <div>
+                        <span><a href="@eventUrl">@eventUrl</a></span>
+                    </div>
+                    <div>
+                        <img class="img-responsive" src="@Model[i].PicSmallUrl" />
+                    </div>
+                </div>
+            </div>
+        }
     </div>
-</nav>
-<div style="margin-top: 70px">
-    @for (int i = 0; i < Model.Count; i++)
-    {
-        string eventUrl = string.Format("http://www.facebook.com/events/{0}", Model[i].EventId);
-        <div class="panel panel-primary" style="width: 800px; margin: 0 auto 10px auto;">
-            <div class="panel-heading">
-                <span>@Html.DisplayFor(m => m[i].Name)</span>
-            </div>
-            <div class="panel-body">
-                <div>
-                    <span>@Html.DisplayFor(m => m[i].Description)</span>
-                </div>
-                <div>
-                    <span>@Html.LabelFor(m => m[i].Location)</span>
-                    <span>@Html.DisplayFor(m => m[i].Location)</span>
-                </div>
-                <div>
-                    <span>@Html.LabelFor(m => m[i].Owner)</span>
-                    <span>@Html.DisplayFor(m => m[i].Owner)</span>
-                </div>
-                <div>
-                    <span>@Html.LabelFor(m => m[i].StartDate)</span>
-                    <span>@Html.DisplayFor(m => m[i].StartDate)</span>
-                </div>
-                <div>
-                    <span><a href="@eventUrl">@eventUrl</a></span>
-                </div>
-                <div >
-                    <img class="img-responsive"  src="@Model[i].PicSmallUrl" />
-                </div>
-            </div>
-        </div>
-    }
 </div>
