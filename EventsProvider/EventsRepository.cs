@@ -24,7 +24,8 @@ namespace EventsProvider
         public List<FbEvent> GetByCategory(FbCategory category)
         {
             string categoryString = category.ToString();
-            var documents = this.fbEvents.Find(e => e.Category == categoryString).ToListAsync().Result;
+            SortDefinition<FbEvent> sortDefinition = Builders<FbEvent>.Sort.Ascending("start_time");
+            var documents = this.fbEvents.Find(e => e.Category == categoryString).Sort(sortDefinition).ToListAsync().Result;
             return documents;
         }
     }
