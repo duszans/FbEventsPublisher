@@ -34,18 +34,17 @@
                 <li>
                     <a href="#about">About</a>
                 </li>
-
                 <li>
-                    <a href="#contact">IT</a>
+                    @Html.ActionLink("IT", "Index", new { Id = (int)FbCategory.It })
                 </li>
                 <li>
-                    <a href="#contact">Impreza</a>
+                    @Html.ActionLink("Impreza", "Index", new { Id = (int)FbCategory.Party })
                 </li>
                 <li>
-                    <a href="#contact">Sport</a>
+                    @Html.ActionLink("Sport", "Index", new { Id = (int)FbCategory.Sport })
                 </li>
                 <li>
-                    <a href="#contact">Kulinaria</a>
+                    @Html.ActionLink("Kulinaria", "Index", new { Id = (int)FbCategory.Culinary })
                 </li>
             </ul>
         </div>
