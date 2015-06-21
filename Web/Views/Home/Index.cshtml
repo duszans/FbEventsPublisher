@@ -35,7 +35,7 @@
                     <a href="#about">About</a>
                 </li>
                 <li>
-                    @Html.ActionLink("IT", "Index", new { Id = (int)FbCategory.It })
+                    @Html.ActionLink("IT", "Index", new { Id = (int)FbCategory.IT })
                 </li>
                 <li>
                     @Html.ActionLink("Impreza", "Index", new { Id = (int)FbCategory.Party })
@@ -50,35 +50,30 @@
         </div>
     </div>
 </nav>
-@*<div class="jumbotron">
-    <h1>Navbar example</h1>*@
-    @*<p lingdex="0">This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-    <p lingdex="1">To see the difference between static and fixed top navbars, just scroll.</p>
-    <p lingdex="2">
-        <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs »</a>
-    </p>*@
+<div style="margin-top: 70px">
     @for (int i = 0; i < Model.Count; i++)
     {
-        <div style="margin-bottom: 10px;">
-            <div>
-                @Html.LabelFor(m => m[i].Name)
-                @Html.DisplayFor(m => m[i].Name)
+        <div class="panel panel-primary" style="width: 800px; margin: 0 auto 10px auto;">
+            <div class="panel-heading">
+                <span>@Html.DisplayFor(m => m[i].Name)</span>
             </div>
-            <div>
-                @Html.LabelFor(m => m[i].Description)
-                @Html.DisplayFor(m => m[i].Description)
-            </div>
-            <div>
-                @Html.LabelFor(m => m[i].Location)
-                @Html.DisplayFor(m => m[i].Location)
-            </div>
-            <div>
-                @Html.LabelFor(m => m[i].Owner)
-                @Html.DisplayFor(m => m[i].Owner)
-            </div>
-            <div>
-                @Html.LabelFor(m => m[i].StartDate)
-                @Html.DisplayFor(m => m[i].StartDate)
+            <div class="panel-body">
+                <div>
+                    <span>@Html.DisplayFor(m => m[i].Description)</span>
+                </div>
+                <div>
+                    <span>@Html.LabelFor(m => m[i].Location)</span>
+                    <span>@Html.DisplayFor(m => m[i].Location)</span>
+                </div>
+                <div>
+                    <span>@Html.LabelFor(m => m[i].Owner)</span>
+                    <span>@Html.DisplayFor(m => m[i].Owner)</span>
+                </div>
+                <div>
+                    <span>@Html.LabelFor(m => m[i].StartDate)</span>
+                    <span>@Html.DisplayFor(m => m[i].StartDate)</span>
+                </div>
             </div>
         </div>
     }
+</div>
