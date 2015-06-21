@@ -44,41 +44,51 @@
             </div>
         </div>
     </nav>
+   @if (Model.Count > 0)
+   {
 
-    <div class="row" style="margin-top: 70px">
-        @for (int i = 0; i < Model.Count; i++)
-        {
-            string eventUrl = string.Format("http://www.facebook.com/events/{0}", Model[i].EventId);
-            string ownerUrl = string.Format("http://www.facebook.com/{0}", Model[i].OwnerId);
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-                <div class="panel panel-primary" style="height: 440px;">
-                    <div class="panel-heading" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-                        <span>@Html.DisplayFor(m => m[i].Name)</span>
-                    </div>
-                    <div class="panel-body">
-                        <div style="overflow-y: scroll; height: 200px;">
-                            <span>@Html.DisplayFor(m => m[i].Description)</span>
-                        </div>
-                        <div style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-top: 10px;">
-                            <span>@Html.LabelFor(m => m[i].Location)</span>
-                            <span>@Html.DisplayFor(m => m[i].Location)</span>
-                        </div>
-                        <div>
-                            <span><a href="@ownerUrl">Organizator</a></span>
-                        </div>
-                        <div style="margin-top: 5px;">
-                            <span>@Html.LabelFor(m => m[i].StartDate)</span>
-                            <span>@Html.DisplayFor(m => m[i].StartDate)</span>
-                        </div>
-                        <div>
-                            <span><a href="@eventUrl">@eventUrl</a></span>
-                        </div>
-                        <div>
-                            <img class="img-responsive" src="@Model[i].PicSmallUrl" style="margin: 10px auto 0 auto;" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        }
+
+       <div class="row" style="margin-top: 70px">
+           @for (int i = 0; i < Model.Count; i++)
+           {
+               string eventUrl = string.Format("http://www.facebook.com/events/{0}", Model[i].EventId);
+               string ownerUrl = string.Format("http://www.facebook.com/{0}", Model[i].OwnerId);
+               <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                   <div class="panel panel-primary" style="height: 440px;">
+                       <div class="panel-heading" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                           <span>@Html.DisplayFor(m => m[i].Name)</span>
+                       </div>
+                       <div class="panel-body">
+                           <div style="overflow-y: scroll; height: 200px;">
+                               <span>@Html.DisplayFor(m => m[i].Description)</span>
+                           </div>
+                           <div style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-top: 10px;">
+                               <span>@Html.LabelFor(m => m[i].Location)</span>
+                               <span>@Html.DisplayFor(m => m[i].Location)</span>
+                           </div>
+                           <div>
+                               <span><a href="@ownerUrl">Organizator</a></span>
+                           </div>
+                           <div style="margin-top: 5px;">
+                               <span>@Html.LabelFor(m => m[i].StartDate)</span>
+                               <span>@Html.DisplayFor(m => m[i].StartDate)</span>
+                           </div>
+                           <div>
+                               <span><a href="@eventUrl">@eventUrl</a></span>
+                           </div>
+                           <div>
+                               <img class="img-responsive" src="@Model[i].PicSmallUrl" style="margin: 10px auto 0 auto;"/>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           }
+       </div>
+   }
+   else
+   {
+       <div  style="margin-top: 100px">
+            <p>Brak wyników </p>
     </div>
+   }
 </div>
