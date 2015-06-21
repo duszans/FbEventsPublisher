@@ -9,7 +9,7 @@ namespace EventsProvider
     {
         public ObjectId Id { get; set; }
 
-        [BsonElement("categoy")]
+        [BsonElement("event_category")]
         public string Category { get; set; }
 
         [BsonElement("event_id")]
@@ -20,7 +20,7 @@ namespace EventsProvider
 
 
         [BsonElement("start_time")]
-        [DisplayName("Start date")]
+        [DisplayName("Data rozpoczęcia")]
         public DateTime? StartDate { get; set; }
 
         [BsonElement("event_description")]
@@ -28,11 +28,13 @@ namespace EventsProvider
         [BsonElement("picture_url")]
         public string  PicSmallUrl { get; set; }
 
-
+        [DisplayName("Miejsce")]
         [BsonElement("location_place")]
         public string Location { get; set; }
 
-        public string Owner { get; set; }
+        [DisplayName("Organizator")]
+        [BsonElement("event_owner")]
+        public string OwnerId { get; set; }
       
         
     }
